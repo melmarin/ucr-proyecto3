@@ -17,7 +17,7 @@ namespace Domain
 
         public Factura(int codigo, DateTime fecha, DateTime fecha_vencimiento, float monto_total, int recargo, string estado)
         {
-            this.codigo = codigo;
+            this.codigo = codigo; 
             this.fecha = fecha;
             this.fecha_vencimiento = fecha_vencimiento;
             this.monto_total = monto_total;

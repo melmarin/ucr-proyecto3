@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Curso.cs" />
+    <Compile Include="Docente.cs" />
     <Compile Include="EncargadoEstudiante.cs" />
+    <Compile Include="Especialidad.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="Grupo.cs" />

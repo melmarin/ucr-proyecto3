@@ -11,19 +11,24 @@ namespace Domain
         private String seccion;
         private String grado;
         private int ano;
+        private LinkedList<Estudiante> listaEstudiantes;
+        private LinkedList<Curso> listaCursos;
 
-        public Grupo(string seccion, string grado, int ano)
+        public Grupo(string seccion, string grado, int ano, LinkedList<Estudiante> listaEstudiantes, LinkedList<Curso> listaCursos)
         {
             this.seccion = seccion;
             this.grado = grado;
             this.ano = ano;
+            this.listaEstudiantes = listaEstudiantes;
+            this.listaCursos = listaCursos;
         }
-
         public Grupo()
         {
             this.seccion = "";
             this.grado = "";
             this.ano = 0;
+            this.listaEstudiantes = new LinkedList<Estudiante>();
+            this.listaCursos = new LinkedList<Curso>();
         }
 
         public string Seccion
@@ -62,6 +67,32 @@ namespace Domain
             set
             {
                 ano = value;
+            }
+        }
+
+        public LinkedList<Estudiante> ListaEstudiantes
+        {
+            get
+            {
+                return listaEstudiantes;
+            }
+
+            set
+            {
+                listaEstudiantes = value;
+            }
+        }
+
+        public LinkedList<Curso> ListaCursos
+        {
+            get
+            {
+                return listaCursos;
+            }
+
+            set
+            {
+                listaCursos = value;
             }
         }
     }

@@ -31,6 +31,7 @@
         <asp:TextBox ID="tb_direccion" runat="server"></asp:TextBox>
         </p>        
     </div>
+
     </form>
 </body>
 </html>

@@ -13,5 +13,10 @@ namespace SistemaEscolar
         {
 
         }
+
+        protected void btnInsertar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

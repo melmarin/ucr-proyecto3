@@ -29,6 +29,9 @@
         <p>
         <asp:Label ID="lb_direccion" runat="server" Text="Dirección:"></asp:Label>
         <asp:TextBox ID="tb_direccion" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Button ID="btnInsertar" runat="server" OnClick="btnInsertar_Click" Text="Insertar" />
         </p>        
     </div>
 

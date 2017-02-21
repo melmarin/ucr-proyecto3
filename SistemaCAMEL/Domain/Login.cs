@@ -65,5 +65,5 @@ namespace Domain
                 rol = value;
             }
         }
-    }
-}
+    }//class
+}//namespace

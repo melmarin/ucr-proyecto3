@@ -38,7 +38,7 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Label ID="lblMensaje" runat="server" Text="Respuesta"></asp:Label>
+            <asp:Label ID="lbMensaje" runat="server" Text="Respuesta"></asp:Label>
         </p>
 
     </form>

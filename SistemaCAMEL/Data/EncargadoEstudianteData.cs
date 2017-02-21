@@ -27,7 +27,7 @@ namespace Data
             cmdInsertarEncargado.Connection = conexion;
 
             //configurar los parametros
-            cmdInsertarEncargado.Parameters.Add(new SqlParameter("@ceduala", encargadoEstudiante.Cedula));
+            cmdInsertarEncargado.Parameters.Add(new SqlParameter("@cedula", encargadoEstudiante.Cedula));
             cmdInsertarEncargado.Parameters.Add(new SqlParameter("@nombre", encargadoEstudiante.Nombre));
             cmdInsertarEncargado.Parameters.Add(new SqlParameter("@apellidos", encargadoEstudiante.Apellidos));
             cmdInsertarEncargado.Parameters.Add(new SqlParameter("@telefono", encargadoEstudiante.Telefono));

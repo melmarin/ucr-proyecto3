@@ -11,7 +11,8 @@ namespace SistemaEscolar
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            EncargadoEstudianteBusiness encargadoBusiness = new EncargadoEstudianteBusiness();
+            lblMensaje.Text = encargadoBusiness.insertar(new Encargado(tb_cedula,tb_nombre,tb_apellidos,tb_telefono,tb_correo,tb_direccion));
         }
     }
 }

@@ -22,6 +22,25 @@ namespace Business
             return encargadoEstudianteData.Insertar(encargadoEstudiante);
         }//Insertar
 
+        public String Editar(EncargadoEstudiante encargadoEstudiante)
+        {
+            return encargadoEstudianteData.Editar(encargadoEstudiante);
+        }//Editar
+
+        public EncargadoEstudiante obtenerEncargado(String cedula)
+        {
+            return encargadoEstudianteData.obtenerEncargado(cedula);
+        }//obtenerEncargado
+
+        public LinkedList<EncargadoEstudiante> obtenerEncargados()
+        {
+            return encargadoEstudianteData.obtenerEncargados();
+        }//obtenerEncargados
+
+        public String Eliminar(String cedula)
+        {
+            return encargadoEstudianteData.Eliminar(cedula);
+        }//Eliminar
 
         }//class
 }//namespace

@@ -11,17 +11,25 @@ namespace SistemaEscolar
 {
     public partial class IngresarEncargadoEstudianteForm : System.Web.UI.Page
     {
+        private String conectionString;
+        private EncargadoEstudianteBusiness encargadoBusiness;
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
         }
 
+        public IngresarEncargadoEstudianteForm()
+        {
+            conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
+            encargadoBusiness = new EncargadoEstudianteBusiness(conectionString);
+        }//constructor
+
         protected void btnInsertar_Click(object sender, EventArgs e)
         {
-            String conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
-            EncargadoEstudianteBusiness encargadoBusiness = new EncargadoEstudianteBusiness(conectionString);
+            
             lbMensaje.Text = encargadoBusiness.Insertar(new Domain.EncargadoEstudiante(tb_cedula.Text, tb_nombre.Text, 
                 tb_apellidos.Text, tb_telefono.Text, tb_correo.Text, tb_direccion.Text));
-        }
-    }
-}
+        }//btnInsertar_Click
+    }//class
+}//namespace

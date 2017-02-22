@@ -94,7 +94,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IngresarEncargadoEstudianteForm.aspx" />
+    <Content Include="BusquedaEncargadoForm.aspx" />
+    <Content Include="EditarEncargadoForm.aspx" />
+    <Content Include="IngresarEncargadoForm.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -110,12 +112,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IngresarEncargadoEstudianteForm.aspx.cs">
-      <DependentUpon>IngresarEncargadoEstudianteForm.aspx</DependentUpon>
+    <Compile Include="BusquedaEncargadoForm.aspx.cs">
+      <DependentUpon>BusquedaEncargadoForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IngresarEncargadoEstudianteForm.aspx.designer.cs">
-      <DependentUpon>IngresarEncargadoEstudianteForm.aspx</DependentUpon>
+    <Compile Include="BusquedaEncargadoForm.aspx.designer.cs">
+      <DependentUpon>BusquedaEncargadoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarEncargadoForm.aspx.cs">
+      <DependentUpon>EditarEncargadoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarEncargadoForm.aspx.designer.cs">
+      <DependentUpon>EditarEncargadoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarEncargadoForm.aspx.cs">
+      <DependentUpon>IngresarEncargadoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IngresarEncargadoForm.aspx.designer.cs">
+      <DependentUpon>IngresarEncargadoForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

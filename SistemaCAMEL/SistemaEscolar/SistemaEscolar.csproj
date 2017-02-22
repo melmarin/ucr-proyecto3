@@ -97,6 +97,7 @@
     <Content Include="BusquedaEncargadoForm.aspx" />
     <Content Include="EditarEncargadoForm.aspx" />
     <Content Include="IngresarEncargadoForm.aspx" />
+    <Content Include="IngresarEstudianteForm.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="IngresarEncargadoForm.aspx.designer.cs">
       <DependentUpon>IngresarEncargadoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarEstudianteForm.aspx.cs">
+      <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IngresarEstudianteForm.aspx.designer.cs">
+      <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

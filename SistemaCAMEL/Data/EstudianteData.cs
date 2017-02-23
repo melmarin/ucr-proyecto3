@@ -81,8 +81,7 @@ namespace Data
 
             if (drEstudiante.Read())
             {
-                // ***************HACER SUBSTRING******************
-                num = Int32.Parse(drEstudiante["carne"].ToString());
+                num = Int32.Parse(drEstudiante["carne"].ToString().Substring(3));
                 num++;
             }//if
             return iniciales + num;

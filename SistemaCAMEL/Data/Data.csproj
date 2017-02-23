@@ -43,6 +43,7 @@
     <Compile Include="DocenteData.cs" />
     <Compile Include="EncargadoEstudianteData.cs" />
     <Compile Include="EstudianteData.cs" />
+    <Compile Include="LoginData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

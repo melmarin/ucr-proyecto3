@@ -51,8 +51,8 @@ namespace SistemaEscolar
             Estudiante estudiante;
             String carne = Convert.ToString(estudianteBusiness.generarCarne());
 
-            estudiante = new Estudiante(carne, tb_cedula.ToString(),
-                tb_nombre.ToString(), tb_apellidos.ToString(), encargadoEstudiante);
+            estudiante = new Estudiante(carne, tb_cedula.Text,
+                tb_nombre.Text, tb_apellidos.Text, encargadoEstudiante);
             //inserta en la base
             lbMensaje.Text = estudianteBusiness.InsertarEncargadoEstudiante(estudiante);
         }

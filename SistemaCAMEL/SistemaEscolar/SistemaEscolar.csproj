@@ -101,6 +101,7 @@
     <Content Include="EditarEncargadoForm.aspx" />
     <Content Include="IngresarEncargado.aspx" />
     <Content Include="IngresarEstudianteForm.aspx" />
+    <Content Include="InsertarDocenteForm.aspx" />
     <Content Include="LoginForm.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="IngresarEstudianteForm.aspx.designer.cs">
       <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarDocenteForm.aspx.cs">
+      <DependentUpon>InsertarDocenteForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertarDocenteForm.aspx.designer.cs">
+      <DependentUpon>InsertarDocenteForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.aspx.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>

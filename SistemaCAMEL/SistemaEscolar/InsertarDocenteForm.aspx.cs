@@ -14,15 +14,14 @@ namespace SistemaEscolar
     {
         private String conectionString;
         private DocenteBusiness docenteBusiness;
-        private LinkedList<Docente> listaDocentes;
-        private LinkedList<Docente> listaDocentes2;
+        private LinkedList<Domain.Docente> listaDocentes;
         public InsertarDocenteForm()
         {
             conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
             docenteBusiness = new DocenteBusiness(conectionString);
-            listaDocentes = new LinkedList<Docente>();
+            listaDocentes = new LinkedList<Domain.Docente>();
             listaDocentes = docenteBusiness.obtenerDocentes();
-            
+
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,7 +39,7 @@ namespace SistemaEscolar
         protected void btn_consultar_Click(object sender, EventArgs e)
         {
 
-            Docente docente = new Docente();
+            Domain.Docente docente = new Domain.Docente();
             string valorCedula = ddlDocentes.Text;
             while (listaDocentes.Count != 0)
             {
@@ -54,23 +53,23 @@ namespace SistemaEscolar
                     listaDocentes.RemoveFirst();
                 }
             }//while
-              docente = docenteBusiness.obtenerDocente(docente);
-              LinkedList<Especialidad> especialidades = docente.Especialidades;
-             Especialidad especialidad= new Especialidad();
-               string salidaEspec="";
-             while (especialidades.Count != 0)
-             {
-                 especialidad = especialidades.First();
-                 salidaEspec += especialidad.Nombre;
-                 especialidades.RemoveFirst();
-                 if (especialidades.Count != 0)
-                 {
-                     salidaEspec += ", ";
-                 }
-                 else { break; }
+            docente = docenteBusiness.obtenerDocente(docente);
+            LinkedList<Especialidad> especialidades = docente.Especialidades;
+            Especialidad especialidad = new Especialidad();
+            string salidaEspec = "";
+            while (especialidades.Count != 0)
+            {
+                especialidad = especialidades.First();
+                salidaEspec += especialidad.Nombre;
+                especialidades.RemoveFirst();
+                if (especialidades.Count != 0)
+                {
+                    salidaEspec += ", ";
+                }
+                else { break; }
 
 
-             }//while 
+            }//while 
 
 
             lbl_cedula.Text = docente.Cedula;
@@ -79,7 +78,7 @@ namespace SistemaEscolar
             lbl_telefono.Text = docente.Telefono;
             lbl_correo.Text = docente.Correo;
             lbl_direccion.Text = docente.Direccion;
-            tb_especialidades.Text = salidaEspec;    
+            tb_especialidades.Text = salidaEspec;
         }//consultar
     }
 }

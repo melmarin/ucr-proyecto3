@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="EncargadoEstudianteBusiness.cs" />
     <Compile Include="EstudianteBusiness.cs" />
+    <Compile Include="LoginBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

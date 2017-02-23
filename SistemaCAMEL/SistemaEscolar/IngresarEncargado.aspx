@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IngresarEncargadoForm.aspx.cs" Inherits="SistemaEscolar.IngresarEncargadoEstudianteForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IngresarEncargado.aspx.cs" Inherits="SistemaEscolar.IngresarEncargadoEstudianteForm" %>
 
 <!DOCTYPE html>
 

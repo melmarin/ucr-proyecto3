@@ -24,10 +24,10 @@ namespace Domain
             this.telefono = "";
             this.correo = "";
             this.direccion = "";
-            this.especialidades = new LinkedList<Especialidad>();
+            //this.especialidades = new LinkedList<Especialidad>();
 
         }//constructor
-        public Docente(string cedula, string nombre, string apellidos, string telefono, string correo, string direccion, LinkedList<Especialidad> especialidades)
+        public Docente(string cedula, string nombre, string apellidos, string telefono, string correo, string direccion)
         {
             this.cedula = cedula;
             this.nombre = nombre;
@@ -35,7 +35,7 @@ namespace Domain
             this.telefono = telefono;
             this.correo = correo;
             this.direccion = direccion;
-            this.especialidades = especialidades;
+            //this.especialidades = new LinkedList<Especialidad>();
         }//constructor
 
         public string Cedula

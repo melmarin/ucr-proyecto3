@@ -98,13 +98,11 @@
     <Content Include="AdmiView\BusquedaEncargadoForm.aspx" />
     <Content Include="AdmiView\EditarEncargadoForm.aspx" />
     <Content Include="AdmiView\EditarEstudianteForm.aspx" />
+    <Content Include="AdmiView\IngresarCursoForm.aspx" />
     <Content Include="AdmiView\IngresarEncargadoForm.aspx" />
     <Content Include="AdmiView\IngresarEstudianteForm.aspx" />
     <Content Include="AdmiView\InicioAdmiForm.aspx" />
     <Content Include="DocenteView\InicioDocenteForm.aspx" />
-    <Content Include="EditarEncargadoForm.aspx" />
-    <Content Include="IngresarEncargado.aspx" />
-    <Content Include="IngresarEstudianteForm.aspx" />
     <Content Include="LoginForm.aspx" />
     <Content Include="ObtenerTipoDeCambioForm.aspx" />
     <Content Include="packages.config" />
@@ -167,6 +165,13 @@
     </Compile>
     <Compile Include="AdmiView\EditarEstudianteForm.aspx.designer.cs">
       <DependentUpon>EditarEstudianteForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdmiView\IngresarCursoForm.aspx.cs">
+      <DependentUpon>IngresarCursoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmiView\IngresarCursoForm.aspx.designer.cs">
+      <DependentUpon>IngresarCursoForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdmiView\IngresarEncargadoForm.aspx.cs">
       <DependentUpon>IngresarEncargadoForm.aspx</DependentUpon>

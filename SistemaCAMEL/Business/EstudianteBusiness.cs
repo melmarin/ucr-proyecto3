@@ -37,5 +37,10 @@ namespace Business
             return estudianteData.obtenerEstudiante(carne);
         }//obtenerEstudiante
 
+        public String Editar(Estudiante estudiante)
+        {
+            return estudianteData.Editar(estudiante);
+        }//editar
+
         }//class
 }//namespace

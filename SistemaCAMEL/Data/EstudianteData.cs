@@ -87,7 +87,7 @@ namespace Data
             return iniciales + num;
         }
 
-        public String Editar(Estudiante estudiante, string cedulaEncargado)
+        public String Editar(Estudiante estudiante)
         {
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
             SqlCommand cmdInsertarEstudiante = new SqlCommand();
@@ -100,7 +100,8 @@ namespace Data
             cmdInsertarEstudiante.Parameters.Add(new SqlParameter("@cedula", estudiante.Cedula));
             cmdInsertarEstudiante.Parameters.Add(new SqlParameter("@nombre", estudiante.Nombre));
             cmdInsertarEstudiante.Parameters.Add(new SqlParameter("@apellidos", estudiante.Apellidos));
-            cmdInsertarEstudiante.Parameters.Add(new SqlParameter("@cedula_encargado", cedulaEncargado));
+            cmdInsertarEstudiante.Parameters.Add(new SqlParameter("@activo", estudiante.Activo));
+            cmdInsertarEstudiante.Parameters.Add(new SqlParameter("@cedula_encargado", estudiante.Encargado.Cedula));
 
             conexion.Open();
             String mensaje = "";

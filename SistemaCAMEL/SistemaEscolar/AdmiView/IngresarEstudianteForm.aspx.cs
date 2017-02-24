@@ -27,6 +27,7 @@ namespace SistemaEscolar.AdmiView
                 LinkedList<EncargadoEstudiante> listaEncargados = new LinkedList<EncargadoEstudiante>();
                 listaEncargados = encargadoBusiness.obtenerEncargados();
                 //Llenando el dropDownList
+
                 ddlEncargado.DataSource = listaEncargados;
                 ddlEncargado.DataValueField = "cedula";
                 ddlEncargado.DataTextField = "cedula";

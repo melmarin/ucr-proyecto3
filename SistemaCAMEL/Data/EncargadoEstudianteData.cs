@@ -11,7 +11,6 @@ namespace Data
     public class EncargadoEstudianteData
     {
         private String cadenaConexion;
-        private object sqlConnection;
 
         public EncargadoEstudianteData(string connectionString)
         {
@@ -172,20 +171,5 @@ namespace Data
             return encargados;
         }//obtenerEncargados
 
-       
-
-
-        public object SqlConnection
-        {
-            get
-            {
-                return sqlConnection;
-            }
-
-            set
-            {
-                sqlConnection = value;
-            }
-        }
     }//class
 }//namespace

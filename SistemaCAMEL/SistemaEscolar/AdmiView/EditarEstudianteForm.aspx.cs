@@ -54,7 +54,7 @@ namespace SistemaEscolar.AdmiView
             estudiante = new Estudiante(tbCarne.Text, tb_cedula.Text,
                 tb_nombre.Text, tb_apellidos.Text, encargadoEstudiante, "Activo");
             //inserta en la base
-            lbMensaje.Text = estudianteBusiness.InsertarEstudiante(estudiante);
+            lbMensaje.Text = estudianteBusiness.Editar(estudiante);
         }
 
         protected void btnInactivar_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace SistemaEscolar.AdmiView
             estudiante = new Estudiante(tbCarne.Text, tb_cedula.Text,
                 tb_nombre.Text, tb_apellidos.Text, encargadoEstudiante, "Inactivo");
             //inserta en la base
-            lbMensaje.Text = estudianteBusiness.InsertarEstudiante(estudiante);
+            lbMensaje.Text = estudianteBusiness.Editar(estudiante);
         }
 
         protected void ddlEncargado_SelectedIndexChanged(object sender, EventArgs e)

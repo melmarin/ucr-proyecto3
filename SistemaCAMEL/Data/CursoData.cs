@@ -88,7 +88,7 @@ namespace Data
 
                 docente = new Docente(drDocente["cedula"].ToString(), drDocente["nombre"].ToString(),
                     drDocente["apellidos"].ToString(), drDocente["telefono"].ToString(), drDocente["correo"].ToString(),
-                    drDocente["direccion"].ToString());
+                    drDocente["direccion"].ToString(), drDocente["especialidad"].ToString());
             }//while
             conexion.Close();
             return docente;

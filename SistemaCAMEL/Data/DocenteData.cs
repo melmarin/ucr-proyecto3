@@ -31,39 +31,15 @@ namespace Data
             while (readerDocentes.Read()){
                 docentes.AddLast(new Docente(readerDocentes["cedula"].ToString(),readerDocentes["nombre"].ToString(),
                     readerDocentes["apellidos"].ToString(), readerDocentes["telefono"].ToString(), 
-                    readerDocentes["correo"].ToString(), readerDocentes["direccion"].ToString()));
+                    readerDocentes["correo"].ToString(), readerDocentes["direccion"].ToString(), 
+                    readerDocentes["especialidad"].ToString()));
 
             }//while
             conexion.Close();
             return docentes;
         }//getDocentes
 
-        public Docente obtenerDocente(Docente docente)
-        {
-            SqlConnection conexion = new SqlConnection(connectionString);
-
-            SqlCommand cmdDocente = new SqlCommand();
-            cmdDocente.CommandText = "sp_obtener_especialidades_docente";
-            cmdDocente.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdDocente.Connection = conexion;
-
-            //configurar los parametros
-            cmdDocente.Parameters.Add(new SqlParameter("@cedula", docente.Cedula));
-            conexion.Open();
-
-            SqlDataReader readerEspecialidades = cmdDocente.ExecuteReader();
-
-            LinkedList<Especialidad> especialidades = new LinkedList<Especialidad>();
-
-            while (readerEspecialidades.Read())
-            {
-                especialidades.AddLast(new Especialidad(readerEspecialidades["nombre"].ToString()));
-
-            }//while
-            Docente nuevoDocente = docente;
-            docente.Especialidades = especialidades;
-            return nuevoDocente;
-        }//getDocentes
+       
 
     }//clase
 }//namespace

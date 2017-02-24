@@ -20,8 +20,6 @@ namespace Business
             return docenteData.obtenerDocentes();
         }
 
-        public Docente obtenerDocente(Docente docente) {
-            return docenteData.obtenerDocente(docente);
-        }
+  
     }//class docenteBusiness
 }

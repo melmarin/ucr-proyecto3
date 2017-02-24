@@ -13,6 +13,7 @@ namespace Domain
         private String nombre;
         private String apellidos;
         private EncargadoEstudiante encargado;
+        private String activo;
 
         public Estudiante()
         {
@@ -20,16 +21,26 @@ namespace Domain
             this.cedula = "";
             this.nombre = "";
             this.apellidos = "";
-            this.encargado = new EncargadoEstudiante(); 
+            this.encargado = new EncargadoEstudiante();
+            this.activo = "";
         }//constructor
 
-        public Estudiante(String carne, String cedula, String nombre, String apellidos, EncargadoEstudiante encargado)
+        public Estudiante(String carne, String cedula, String nombre, String apellidos, EncargadoEstudiante encargado, String activo)
         {
             this.Carne = carne;
             this.Cedula = cedula;
             this.Nombre = nombre;
             this.Apellidos = apellidos;
             this.Encargado = encargado;
+            this.activo = activo;
+        }//consturctor
+
+        public Estudiante(String carne, String cedula, String nombre, String apellidos)
+        {
+            this.Carne = carne;
+            this.Cedula = cedula;
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
         }//consturctor
 
         public string Carne
@@ -97,6 +108,17 @@ namespace Domain
             }
         }
 
+        public string Activo
+        {
+            get
+            {
+                return activo;
+            }
 
+            set
+            {
+                activo = value;
+            }
+        }
     }//class
 }//namespace

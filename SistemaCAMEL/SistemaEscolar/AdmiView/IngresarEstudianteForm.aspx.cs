@@ -8,7 +8,7 @@ using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SistemaEscolar
+namespace SistemaEscolar.AdmiView
 {
     public partial class IngresarEstudianteForm : System.Web.UI.Page
     {
@@ -18,6 +18,10 @@ namespace SistemaEscolar
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
+            estudianteBusiness = new EstudianteBusiness(conectionString);
+            encargadoBusiness = new EncargadoEstudianteBusiness(conectionString);
+
             if (!Page.IsPostBack)
             {
                 LinkedList<EncargadoEstudiante> listaEncargados = new LinkedList<EncargadoEstudiante>();
@@ -30,17 +34,6 @@ namespace SistemaEscolar
                 ddlEncargado.SelectedIndex = ddlEncargado.Items.Count - 1;
             }
         }
-        public IngresarEstudianteForm()
-        {
-            conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
-            estudianteBusiness = new EstudianteBusiness(conectionString);
-            encargadoBusiness = new EncargadoEstudianteBusiness(conectionString);
-        }//ctor
-
-        protected void ddlEncargado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
 
         protected void btnInsertar_Click(object sender, EventArgs e)
         {
@@ -52,9 +45,14 @@ namespace SistemaEscolar
             String carne = Convert.ToString(estudianteBusiness.generarCarne());
 
             estudiante = new Estudiante(carne, tb_cedula.Text,
-                tb_nombre.Text, tb_apellidos.Text, encargadoEstudiante);
+                tb_nombre.Text, tb_apellidos.Text, encargadoEstudiante, "Activo");
             //inserta en la base
-            lbMensaje.Text = estudianteBusiness.InsertarEncargadoEstudiante(estudiante);
+            lbMensaje.Text = estudianteBusiness.InsertarEstudiante(estudiante);
+        }
+
+        protected void ddlEncargado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }//class
 }//namespace

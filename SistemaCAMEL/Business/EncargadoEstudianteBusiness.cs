@@ -42,5 +42,10 @@ namespace Business
             return encargadoEstudianteData.Eliminar(cedula);
         }//Eliminar
 
+        public LinkedList<EncargadoEstudiante> obtenerEncargadosNombre(String nombre)
+        {
+            return encargadoEstudianteData.obtenerEncargadosNombre(nombre);
+        }//obtnerEncargadosNombre
+
         }//class
 }//namespace

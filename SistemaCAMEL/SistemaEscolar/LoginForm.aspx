@@ -11,7 +11,6 @@
         Usuario:&nbsp;
         <asp:TextBox ID="tbUsuario" runat="server"></asp:TextBox>
         <br />
-        <br />
         Contraseña:&nbsp;
         <input id="passClave" type="password" runat="server" /><br />
         <br />

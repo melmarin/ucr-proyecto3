@@ -7,99 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SistemaEscolar {
+namespace SistemaEscolar.AdmiView {
     
     
-    public partial class IngresarEstudianteForm {
+    public partial class BuscarEstudianteForm {
         
         /// <summary>
-        /// form1 control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lb_cedula control.
+        /// tbNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_cedula;
+        protected global::System.Web.UI.WebControls.TextBox tbNombre;
         
         /// <summary>
-        /// tb_cedula control.
+        /// btnNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_cedula;
+        protected global::System.Web.UI.WebControls.Button btnNombre;
         
         /// <summary>
-        /// lb_nombre control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_nombre;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// tb_nombre control.
+        /// tbCarne control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_nombre;
+        protected global::System.Web.UI.WebControls.TextBox tbCarne;
         
         /// <summary>
-        /// Apellidos control.
+        /// btnCarne control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Apellidos;
+        protected global::System.Web.UI.WebControls.Button btnCarne;
         
         /// <summary>
-        /// tb_apellidos control.
+        /// gvEstudiantes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_apellidos;
-        
-        /// <summary>
-        /// ddlEncargado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEncargado;
-        
-        /// <summary>
-        /// btnInsertar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsertar;
-        
-        /// <summary>
-        /// lbMensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMensaje;
+        protected global::System.Web.UI.WebControls.GridView gvEstudiantes;
     }
 }

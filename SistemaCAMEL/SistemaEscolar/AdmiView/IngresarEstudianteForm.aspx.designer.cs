@@ -7,19 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SistemaEscolar {
+namespace SistemaEscolar.AdmiView {
     
     
-    public partial class IngresarEncargadoEstudianteForm {
+    public partial class IngresarEstudianteForm {
         
         /// <summary>
-        /// form_insertar control.
+        /// lb_cedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form_insertar;
+        protected global::System.Web.UI.WebControls.Label lb_cedula;
+        
+        /// <summary>
+        /// tb_cedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_cedula;
         
         /// <summary>
         /// lb_nombre control.
@@ -58,76 +67,13 @@ namespace SistemaEscolar {
         protected global::System.Web.UI.WebControls.TextBox tb_apellidos;
         
         /// <summary>
-        /// lb_cedula control.
+        /// ddlEncargado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_cedula;
-        
-        /// <summary>
-        /// tb_cedula control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_cedula;
-        
-        /// <summary>
-        /// lb_telefono control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_telefono;
-        
-        /// <summary>
-        /// tb_telefono control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_telefono;
-        
-        /// <summary>
-        /// lb_correo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_correo;
-        
-        /// <summary>
-        /// tb_correo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_correo;
-        
-        /// <summary>
-        /// lb_direccion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_direccion;
-        
-        /// <summary>
-        /// tb_direccion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_direccion;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEncargado;
         
         /// <summary>
         /// btnInsertar control.

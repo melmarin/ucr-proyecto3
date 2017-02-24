@@ -94,13 +94,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdmiView\BuscarEstudianteForm.aspx" />
+    <Content Include="AdmiView\BusquedaEncargadoForm.aspx" />
+    <Content Include="AdmiView\EditarEncargadoForm.aspx" />
+    <Content Include="AdmiView\EditarEstudianteForm.aspx" />
     <Content Include="AdmiView\IngresarEncargadoForm.aspx" />
+    <Content Include="AdmiView\IngresarEstudianteForm.aspx" />
     <Content Include="AdmiView\InicioAdmiForm.aspx" />
-    <Content Include="BusquedaEncargadoForm.aspx" />
     <Content Include="DocenteView\InicioDocenteForm.aspx" />
-    <Content Include="EditarEncargadoForm.aspx" />
-    <Content Include="IngresarEncargado.aspx" />
-    <Content Include="IngresarEstudianteForm.aspx" />
     <Content Include="LoginForm.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -126,6 +127,34 @@
     <Compile Include="Admi.Master.designer.cs">
       <DependentUpon>Admi.Master</DependentUpon>
     </Compile>
+    <Compile Include="AdmiView\BuscarEstudianteForm.aspx.cs">
+      <DependentUpon>BuscarEstudianteForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmiView\BuscarEstudianteForm.aspx.designer.cs">
+      <DependentUpon>BuscarEstudianteForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdmiView\BusquedaEncargadoForm.aspx.cs">
+      <DependentUpon>BusquedaEncargadoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmiView\BusquedaEncargadoForm.aspx.designer.cs">
+      <DependentUpon>BusquedaEncargadoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdmiView\EditarEncargadoForm.aspx.cs">
+      <DependentUpon>EditarEncargadoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmiView\EditarEncargadoForm.aspx.designer.cs">
+      <DependentUpon>EditarEncargadoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdmiView\EditarEstudianteForm.aspx.cs">
+      <DependentUpon>EditarEstudianteForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmiView\EditarEstudianteForm.aspx.designer.cs">
+      <DependentUpon>EditarEstudianteForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdmiView\IngresarEncargadoForm.aspx.cs">
       <DependentUpon>IngresarEncargadoForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,19 +162,19 @@
     <Compile Include="AdmiView\IngresarEncargadoForm.aspx.designer.cs">
       <DependentUpon>IngresarEncargadoForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdmiView\IngresarEstudianteForm.aspx.cs">
+      <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmiView\IngresarEstudianteForm.aspx.designer.cs">
+      <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdmiView\InicioAdmiForm.aspx.cs">
       <DependentUpon>InicioAdmiForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdmiView\InicioAdmiForm.aspx.designer.cs">
       <DependentUpon>InicioAdmiForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BusquedaEncargadoForm.aspx.cs">
-      <DependentUpon>BusquedaEncargadoForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BusquedaEncargadoForm.aspx.designer.cs">
-      <DependentUpon>BusquedaEncargadoForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Docente.Master.cs">
       <DependentUpon>Docente.Master</DependentUpon>
@@ -160,27 +189,6 @@
     </Compile>
     <Compile Include="DocenteView\InicioDocenteForm.aspx.designer.cs">
       <DependentUpon>InicioDocenteForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EditarEncargadoForm.aspx.cs">
-      <DependentUpon>EditarEncargadoForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditarEncargadoForm.aspx.designer.cs">
-      <DependentUpon>EditarEncargadoForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="IngresarEncargado.aspx.cs">
-      <DependentUpon>IngresarEncargado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="IngresarEncargado.aspx.designer.cs">
-      <DependentUpon>IngresarEncargado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="IngresarEstudianteForm.aspx.cs">
-      <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="IngresarEstudianteForm.aspx.designer.cs">
-      <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.aspx.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>

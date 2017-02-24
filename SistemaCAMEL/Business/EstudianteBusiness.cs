@@ -17,15 +17,25 @@ namespace Business
             this.estudianteData = new EstudianteData(cadenaConexion);
         }//ctor
 
-        public String InsertarEncargadoEstudiante(Estudiante estudiante)
+        public String InsertarEstudiante(Estudiante estudiante)
         {
-            return estudianteData.InsertarEncargadoEstudiante(estudiante);
-        }//InsertarEncargadoEstudiante
+            return estudianteData.InsertarEstudiante(estudiante);
+        }//InsertarEstudiante
 
         public String generarCarne()
         {
             return estudianteData.generarCarne();
         }//generarCarne
+
+        public LinkedList<Estudiante> obtenerEstudiantes()
+        {
+            return estudianteData.obtenerEstudiantes();
+        }//obtenerEstudiantes
+
+        public Estudiante obtenerEstudiante(String carne)
+        {
+            return estudianteData.obtenerEstudiante(carne);
+        }//obtenerEstudiante
 
         }//class
 }//namespace

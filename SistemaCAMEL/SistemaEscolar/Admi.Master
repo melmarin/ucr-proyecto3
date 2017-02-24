@@ -22,7 +22,16 @@
                 <asp:MenuItem NavigateUrl="~/AdmiView/InicioAdmiForm.aspx" Text="Inicio" Value="Inicio"></asp:MenuItem>
                 <asp:MenuItem Text="Encargado" Value="Encargado">
                     <asp:MenuItem NavigateUrl="~/AdmiView/IngresarEncargadoForm.aspx" Text="Registrar" Value="Registrar"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/AdmiView/BusquedaEncargadoForm.aspx" Text="Buscar" Value="Buscar"></asp:MenuItem>
                 </asp:MenuItem>
+                <asp:MenuItem Text="Estudiante" Value="Estudiante">
+                    <asp:MenuItem NavigateUrl="~/AdmiView/IngresarEstudianteForm.aspx" Text="Registrar" Value="Registrar"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/AdmiView/BuscarEstudianteForm.aspx" Text="Buscar" Value="Buscar"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="Docente" Value="Docente"></asp:MenuItem>
+                <asp:MenuItem Text="Curso" Value="Curso"></asp:MenuItem>
+                <asp:MenuItem Text="Grupo" Value="Grupo"></asp:MenuItem>
+                <asp:MenuItem Text="Matrícula" Value="Matrícula"></asp:MenuItem>
             </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

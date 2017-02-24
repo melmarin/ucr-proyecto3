@@ -146,6 +146,34 @@ namespace Data
             return encargados;
         }//obtenerEncargados
 
+        public LinkedList<EncargadoEstudiante> obtenerEncargadosNombre(String nombre)
+        {
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdObtenerEncargados = new SqlCommand();
+            cmdObtenerEncargados.CommandText = "sp_obtener_encargados_nombre";
+            cmdObtenerEncargados.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtenerEncargados.Connection = conexion;
+            //configurar los parametros
+            cmdObtenerEncargados.Parameters.Add(new SqlParameter("@nombre", nombre));
+
+            conexion.Open();
+            SqlDataReader drEncargados = cmdObtenerEncargados.ExecuteReader();
+            LinkedList<EncargadoEstudiante> encargados = new LinkedList<EncargadoEstudiante>();
+            EncargadoEstudiante encargadoEstudiante = new EncargadoEstudiante();
+            while (drEncargados.Read())
+            {
+                encargadoEstudiante = new EncargadoEstudiante(drEncargados["cedula"].ToString(),
+                    drEncargados["nombre"].ToString(), drEncargados["apellidos"].ToString(), drEncargados["telefono"].ToString(),
+                    drEncargados["correo"].ToString(), drEncargados["direccion"].ToString());
+
+                encargados.AddLast(encargadoEstudiante);
+            }//while
+            conexion.Close();
+            return encargados;
+        }//obtenerEncargados
+
+       
+
 
         public object SqlConnection
         {

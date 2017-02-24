@@ -39,7 +39,19 @@ namespace Data
             return docentes;
         }//getDocentes
 
-       
+        public void eliminarDocente(string cedula)
+        {
+            //TODO  hacer método
+        }
 
+        public void modificarDocente(Docente docente, string cedula)
+        {
+            //TODO  hacer método
+        }
+
+        public void ingresarDocente(Docente docente)
+        {
+            //TODO  hacer método para ingresar docentes.
+        }
     }//clase
 }//namespace

@@ -157,6 +157,15 @@ namespace SistemaEscolar.AdmiView {
         protected global::System.Web.UI.WebControls.DropDownList ddl_cedulas;
         
         /// <summary>
+        /// Control btn_insertar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_insertar;
+        
+        /// <summary>
         /// Control btn_Consultar.
         /// </summary>
         /// <remarks>

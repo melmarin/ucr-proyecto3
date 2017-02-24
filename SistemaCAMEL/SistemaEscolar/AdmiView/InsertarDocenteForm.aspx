@@ -40,13 +40,15 @@
         <br />
         <asp:DropDownList ID="ddl_cedulas" runat="server">
         </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btn_insertar" runat="server" OnClick="btn_insertar_Click" Text="Agregar" />
         <br />
         <br />
         <asp:Button ID="btn_Consultar" runat="server" OnClick="btn_Consultar_Click" Text="Consultar" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btn_editar" runat="server" Text="Modificar" />
+        <asp:Button ID="btn_editar" runat="server" OnClick="btn_editar_Click" Text="Modificar" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btn_borrar" runat="server" Text="Eliminar" />
+        <asp:Button ID="btn_borrar" runat="server" OnClick="btn_borrar_Click" Text="Eliminar" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />

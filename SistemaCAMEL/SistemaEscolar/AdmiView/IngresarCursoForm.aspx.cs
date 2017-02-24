@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Domain;
 
 namespace SistemaEscolar.AdmiView
 {
@@ -13,24 +14,27 @@ namespace SistemaEscolar.AdmiView
     {
         private String conectionString;
         private CursoBusiness cursoBusiness;
-        //INSTANCIAR DOCENTE BUSINESS
+        private DocenteBusiness docenteBusiness;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
             cursoBusiness = new CursoBusiness(conectionString);
+            docenteBusiness = new DocenteBusiness(conectionString);
 
             if (!Page.IsPostBack)
             {
-                LinkedList<Docente> docentes = new LinkedList<Docente>();
+                LinkedList<Domain.Docente> docentes = new LinkedList<Domain.Docente>();
+                docentes = docenteBusiness.obtenerDocentes();
                 //docentes = LA LISTA DE DOCENTES
                  
                 //Llenando el dropDownList
-                /*
-                ddlEncargado.DataSource = listaEncargados;
-                ddlEncargado.DataValueField = "cedula";
-                ddlEncargado.DataTextField = "cedula";
-                ddlEncargado.DataBind();
-                ddlEncargado.SelectedIndex = ddlEncargado.Items.Count - 1;*/
+                
+                ddlDocentes.DataSource = docentes;
+                ddlDocentes.DataValueField = "cedula";
+                ddlDocentes.DataTextField = "cedula";
+                ddlDocentes.DataBind();
+                ddlDocentes.SelectedIndex = ddlDocentes.Items.Count - 1;
             }
         }
 
@@ -41,7 +45,13 @@ namespace SistemaEscolar.AdmiView
 
         protected void btnInsertar_Click(object sender, EventArgs e)
         {
+            //primero obtiene el docente
+            Domain.Docente docente = new Domain.Docente();
+            docente = docenteBusiness.obtenerDocente(ddlDocentes.SelectedItem.Value);
 
+            Curso curso = new Curso(tbSigla.Text, tbNombre.Text, docente);
+            //inserta en la base
+            lbMensaje.Text = cursoBusiness.insertar(curso);
         }
     }
 }

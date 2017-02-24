@@ -21,7 +21,7 @@ namespace Data
         public LinkedList<Docente> obtenerDocentes() {
             SqlConnection conexion  = new SqlConnection(connectionString);
 
-            SqlCommand cmdDocentes = new SqlCommand("EXEC sp_obtener_docentes", conexion);
+            SqlCommand cmdDocentes = new SqlCommand("sp_obtener_docentes", conexion);
             conexion.Open();
 
             SqlDataReader readerDocentes = cmdDocentes.ExecuteReader();
@@ -52,6 +52,32 @@ namespace Data
         public void ingresarDocente(Docente docente)
         {
             //TODO  hacer método para ingresar docentes.
+        }
+
+        public Docente obtenerDocente(String cedula)
+        {
+            SqlConnection conexion = new SqlConnection(this.connectionString);
+            SqlCommand cmdObtener = new SqlCommand();
+            cmdObtener.CommandText = "sp_obtener_docente";
+            cmdObtener.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtener.Connection = conexion;
+
+            //configurar los parametros
+            cmdObtener.Parameters.Add(new SqlParameter("@cedula", cedula));
+
+            conexion.Open();
+            SqlDataReader drDocente = cmdObtener.ExecuteReader();
+            Docente docente = new Docente();
+
+            while (drDocente.Read())
+            {
+
+                docente = new Docente(drDocente["cedula"].ToString(), drDocente["nombre"].ToString(),
+                    drDocente["apellidos"].ToString(), drDocente["telefono"].ToString(), drDocente["correo"].ToString(),
+                    drDocente["direccion"].ToString(), drDocente["especialidad"].ToString());
+            }//while
+            conexion.Close();
+            return docente;
         }
     }//clase
 }//namespace

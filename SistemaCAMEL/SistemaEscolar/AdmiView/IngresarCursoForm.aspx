@@ -4,10 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="Label1" runat="server" Text="Sigla:"></asp:Label>
 &nbsp;
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:TextBox ID="tbSigla" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="Label2" runat="server" Text="Nombre: "></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+&nbsp;<asp:TextBox ID="tbNombre" runat="server"></asp:TextBox>
     <br />
     <br />
     <asp:Label ID="Label3" runat="server" Text="Profesor:"></asp:Label>
@@ -20,6 +20,8 @@
     <asp:Button ID="btnInsertar" runat="server" OnClick="btnInsertar_Click" Text="Ingresar" />
     <br />
     <br />
+    <br />
+    <asp:Label ID="lbMensaje" runat="server"></asp:Label>
     <br />
     <br />
     <br />

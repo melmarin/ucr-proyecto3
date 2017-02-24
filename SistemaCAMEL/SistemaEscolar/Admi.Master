@@ -29,7 +29,9 @@
                     <asp:MenuItem NavigateUrl="~/AdmiView/BuscarEstudianteForm.aspx" Text="Buscar" Value="Buscar"></asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="Docente" Value="Docente"></asp:MenuItem>
-                <asp:MenuItem Text="Curso" Value="Curso"></asp:MenuItem>
+                <asp:MenuItem Text="Curso" Value="Curso">
+                    <asp:MenuItem NavigateUrl="~/AdmiView/IngresarCursoForm.aspx" Text="Registrar" Value="Registrar"></asp:MenuItem>
+                </asp:MenuItem>
                 <asp:MenuItem Text="Grupo" Value="Grupo"></asp:MenuItem>
                 <asp:MenuItem Text="Matrícula" Value="Matrícula"></asp:MenuItem>
             </Items>

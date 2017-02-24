@@ -42,7 +42,7 @@ namespace Data
             return mensaje;
         }//insertar
 
-        public LinkedList<Curso> cursos()
+        /*public LinkedList<Curso> cursos()
         {
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
             SqlCommand cmdObtener = new SqlCommand();
@@ -66,32 +66,7 @@ namespace Data
             }//while
             conexion.Close();
             return cursos;
-        }
+        }*/
 
-        public Docente obtenerDocente(String cedula)
-        {
-            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
-            SqlCommand cmdObtener = new SqlCommand();
-            cmdObtener.CommandText = "sp_obtener_cursos";
-            cmdObtener.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdObtener.Connection = conexion;
-
-            //configurar los parametros
-            cmdObtener.Parameters.Add(new SqlParameter("@cedula", cedula));
-
-            conexion.Open();
-            SqlDataReader drDocente = cmdObtener.ExecuteReader();
-            Docente docente = new Docente();
-
-            while (drDocente.Read())
-            {
-
-                docente = new Docente(drDocente["cedula"].ToString(), drDocente["nombre"].ToString(),
-                    drDocente["apellidos"].ToString(), drDocente["telefono"].ToString(), drDocente["correo"].ToString(),
-                    drDocente["direccion"].ToString(), drDocente["especialidad"].ToString());
-            }//while
-            conexion.Close();
-            return docente;
-        }
     }//class
 }//namespace

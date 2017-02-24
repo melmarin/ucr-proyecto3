@@ -20,6 +20,7 @@ namespace Business
             return docenteData.obtenerDocentes();
         }
 
+        /*
         public void ingresarDocente(Docente docente)
         {
             docenteData.ingresarDocente(docente);
@@ -34,5 +35,11 @@ namespace Business
         {
             docenteData.eliminarDocente(cedula);
         }
-    }//class docenteBusiness
+        */
+
+        public Docente obtenerDocente(String cedula)
+        {
+            return docenteData.obtenerDocente(cedula);
+        }
+        }//class docenteBusiness
 }

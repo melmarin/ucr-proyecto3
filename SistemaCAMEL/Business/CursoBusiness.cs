@@ -22,9 +22,9 @@ namespace Business
             return cursoData.insertar(curso);
         }//insertar
 
-        public LinkedList<Curso> cursos()
+        /*public LinkedList<Curso> cursos()
         {
             return cursoData.cursos();
-        }//cursos
+        }//cursos*/
         }//class
 }//namespace

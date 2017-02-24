@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:56885/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:56885/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:56885/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:56885/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_GetData_InputMessage">
@@ -25,6 +26,12 @@
   <wsdl:message name="IService_getTextoDePrueba_OutputMessage">
     <wsdl:part name="parameters" element="tns:getTextoDePruebaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_validar_InputMessage">
+    <wsdl:part name="parameters" element="tns:validar" />
+  </wsdl:message>
+  <wsdl:message name="IService_validar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:validarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetData" message="tns:IService_GetData_InputMessage" />
@@ -37,6 +44,10 @@
     <wsdl:operation name="getTextoDePrueba">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getTextoDePrueba" message="tns:IService_getTextoDePrueba_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getTextoDePruebaResponse" message="tns:IService_getTextoDePrueba_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="validar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/validar" message="tns:IService_validar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/validarResponse" message="tns:IService_validar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -61,6 +72,15 @@
     </wsdl:operation>
     <wsdl:operation name="getTextoDePrueba">
       <soap:operation soapAction="http://tempuri.org/IService/getTextoDePrueba" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validar">
+      <soap:operation soapAction="http://tempuri.org/IService/validar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -16,11 +16,18 @@ public interface IService
 
 	[OperationContract]
 	CompositeType GetDataUsingDataContract(CompositeType composite);
+    [OperationContract]
+    CompositeType GetDataUsingDataContracta(CompositeType composite);
 
     // TODO: agregue aquí sus operaciones de servicio
 
     [OperationContract]//las operaciones que realizará el servicio
     string getTextoDePrueba();
+
+    [OperationContract]
+    string validar(Matricula parametros);
+
+
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
@@ -46,13 +53,25 @@ public class CompositeType
 }
 
 [DataContract]//permite hacer la comunicación serializable y así comunicarse por la web
-public class matricula {
+public class Matricula {
+
+    string user = "Nombre_usuario";
+    string pass = "Pass_usuario ";
 
     [DataMember]
-    public string carne;
+    public string User
+    {
+        get { return user; }
+        set { user = value; }
+    }
     [DataMember]
-    public int monto;
-    [DataMember]
-    public string nombre;
+    public string Pass
+    {
+        get { return pass; }
+        set { pass = value; }
+    }
 
 }//matricula
+
+
+    

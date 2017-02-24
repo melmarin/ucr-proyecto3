@@ -19,9 +19,7 @@ namespace clienteServicioPrueba
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CamelServiceReference.ServiceClient client= new CamelServiceReference.ServiceClient();
 
-            dataGridView1.DataSource = client.getTextoDePrueba();
         }
 
         private void tb_resultado_TextChanged(object sender, EventArgs e)
@@ -31,9 +29,11 @@ namespace clienteServicioPrueba
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CamelServiceReference.ServiceClient client = new CamelServiceReference.ServiceClient();
 
-            tb_resultado.Text = client.getTextoDePrueba();
+            CamelServiceReference.ServiceClient cliente = new CamelServiceReference.ServiceClient();
+            // tb_resultado.Text = client.getTextoDePrueba();
+            string[] parametros = { "steven", "pass122" };
+            tb_resultado.Text = cliente.validar(parametros);
         }
 
         private void label1_Click(object sender, EventArgs e)

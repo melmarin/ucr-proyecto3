@@ -95,6 +95,12 @@ namespace clienteServicioPrueba.CamelServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTextoDePrueba", ReplyAction="http://tempuri.org/IService/getTextoDePruebaResponse")]
         System.Threading.Tasks.Task<string> getTextoDePruebaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/validar", ReplyAction="http://tempuri.org/IService/validarResponse")]
+        string validar(string[] parametros);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/validar", ReplyAction="http://tempuri.org/IService/validarResponse")]
+        System.Threading.Tasks.Task<string> validarAsync(string[] parametros);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -146,6 +152,14 @@ namespace clienteServicioPrueba.CamelServiceReference {
         
         public System.Threading.Tasks.Task<string> getTextoDePruebaAsync() {
             return base.Channel.getTextoDePruebaAsync();
+        }
+        
+        public string validar(string[] parametros) {
+            return base.Channel.validar(parametros);
+        }
+        
+        public System.Threading.Tasks.Task<string> validarAsync(string[] parametros) {
+            return base.Channel.validarAsync(parametros);
         }
     }
 }

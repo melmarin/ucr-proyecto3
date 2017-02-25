@@ -40,6 +40,48 @@ namespace Data
             return rol;
         }//obtenerRol
 
+        public string validarEncargado(string usuario, string clave)
+        {
+            String carnet = "";
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdValidar = new SqlCommand();
+            cmdValidar.CommandText = "sp_validar_engargado_login";
+            cmdValidar.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdValidar.Connection = conexion;
+
+            //configurar los parametros
+            cmdValidar.Parameters.Add(new SqlParameter("@usuario", usuario));
+            cmdValidar.Parameters.Add(new SqlParameter("@clave", clave));
+
+            conexion.Open();
+            SqlDataReader drRol = cmdValidar.ExecuteReader();
+
+            if (drRol.HasRows)
+            {
+            SqlCommand cmdObtenerEstudiante = new SqlCommand();
+            cmdObtenerEstudiante.CommandText = "sp_obtener_id_estudiante_matricula";
+            cmdObtenerEstudiante.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtenerEstudiante.Connection = conexion;
+
+            //configurar los parametros
+            cmdObtenerEstudiante.Parameters.Add(new SqlParameter("@usuario", usuario));
+
+            conexion.Open();
+            SqlDataReader drCarnet = cmdObtenerEstudiante.ExecuteReader();
+                while (drCarnet.Read())
+                {
+                    carnet = drRol["id_estudiante"].ToString();
+                    return carnet;
+                }
+
+            }
+            else {
+                return "error";
+            }
+
+            return carnet;
+        }
+
         public bool insertarLogin(string usuario, string clave, string rol)
         {
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
@@ -87,3 +129,38 @@ namespace Data
         }//obtenerRol
     }//class
 }//namespace
+
+
+
+
+
+
+
+
+/*_____________________________________________________________________________
+ 
+     
+     PROCEDIMIENTOS-->
+
+                CREATE PROCEDURE sp_validar_engargado_login 
+                (@user varchar(9),
+                @pass varchar(30)
+                ) 
+                AS
+                    SELECT * from login_sitema where usuario=@user and clave=@pass;
+                go
+
+
+
+                CREATE PROCEDURE sp_obtener_id_estudiante_matricula
+                (@user varchar(9)
+                ) 
+                AS
+                    SELECT * from matricula where usuario=@user;
+                go
+     
+     
+     
+     
+     
+     */

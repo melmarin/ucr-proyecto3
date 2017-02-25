@@ -20,5 +20,10 @@ namespace Business
         {
             return loginData.obtenerRol(usuario, clave);
         }//obtenerRol
-        }//class
+
+        public string validarEncargado(string usuario, string clave)
+        {
+            return loginData.validarEncargado(usuario, clave);
+        }
+    }//class
 }//namespace

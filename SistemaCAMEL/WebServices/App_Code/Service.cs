@@ -8,6 +8,10 @@ using System.Text;
 using Business;
 using Domain;
 using System.Web.Configuration;
+using System.Diagnostics;
+using Domain;
+using Business;
+
 
 public class Service : IService
 {
@@ -23,6 +27,18 @@ public class Service : IService
     {
         
         return "esto es un texto del servidor-******-usuario "+user ;
+    }
+
+    public string login(string user, string pass)
+    {
+        string conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
+        Login login = new Login();
+        login.Usuario = user;
+        login.Clave = pass;
+        LoginBusiness loginBusiness = new LoginBusiness(conectionString);
+        string resultado = loginBusiness.validarEncargado(user, pass);
+
+        return resultado;
     }
 
     public string validar(Matricula parametros)

@@ -16,6 +16,10 @@ public interface IService
     [OperationContract]
     string consulta2(string user);
 
+
+    [OperationContract]
+    string login(string user, string pass);
+
     [OperationContract]
     string validar(Matricula parametros);
 }

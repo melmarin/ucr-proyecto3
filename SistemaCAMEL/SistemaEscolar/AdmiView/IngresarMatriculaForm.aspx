@@ -20,4 +20,7 @@
 <br />
 <br />
 <asp:Label ID="lbMensaje" runat="server"></asp:Label>
+    <br />
+    <br />
+    <asp:Label ID="lbCredenciales" runat="server"></asp:Label>
 </asp:Content>

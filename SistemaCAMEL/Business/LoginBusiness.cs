@@ -48,7 +48,6 @@ namespace Business
         {
             return loginData.pagar(carnet);
         }
-    }//class
 
         public String generarUsuario()
         {

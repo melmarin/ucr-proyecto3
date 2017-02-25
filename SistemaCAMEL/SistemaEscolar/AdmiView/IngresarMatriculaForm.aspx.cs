@@ -70,14 +70,17 @@ namespace SistemaEscolar.AdmiView
             //grupo
             grupo = grupoBusiness.obtenerGrupo(ddlGrupo.SelectedItem.Value);
 
-            factura = new Factura(facturaBusines.calcularMonto(grupo.Seccion), "Pendiente"); 
+            factura = new Factura(facturaBusines.calcularMonto(grupo.Seccion), "Pendiente");
 
             string usuario = loginBusiness.generarUsuario();
-            loginBusiness.insertarLogin(usuario, loginBusiness.generarClave(), "ENCA");
+            string clave = loginBusiness.generarClave();
+            loginBusiness.insertarLogin(usuario,clave, "ENCA");
             login = new Domain.Login(usuario);
 
             Matricula matricula = new Matricula(factura, grupo, estudiante, login);
             lbMensaje.Text = matriculaBusiness.insertar(matricula);
+
+            lbCredenciales.Text = "Usuario: " + usuario + " clave: " + clave; 
 
         }
     }

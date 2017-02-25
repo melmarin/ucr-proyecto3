@@ -107,7 +107,6 @@
     <Content Include="AdmiView\InsertarDocenteForm.aspx" />
     <Content Include="DocenteView\InicioDocenteForm.aspx" />
     <Content Include="LoginForm.aspx" />
-    <Content Include="ObtenerTipoDeCambioForm.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -238,13 +237,6 @@
     </Compile>
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ObtenerTipoDeCambioForm.aspx.cs">
-      <DependentUpon>ObtenerTipoDeCambioForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ObtenerTipoDeCambioForm.aspx.designer.cs">
-      <DependentUpon>ObtenerTipoDeCambioForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

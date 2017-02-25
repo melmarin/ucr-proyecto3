@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
 namespace Business
 {
     public class LoginBusiness
@@ -25,6 +25,30 @@ namespace Business
         {
             return loginData.validarEncargado(usuario, clave);
         }
+
+        public string cambiarPass(string user,string pass)
+        {
+            return loginData.cambiarPass(user,pass);
+        }
+
+        public string obtenerMonto(string user)
+        {
+            cr.fi.bccr.indicadoreseconomicos.wsIndicadoresEconomicos cliente = new cr.fi.bccr.indicadoreseconomicos.wsIndicadoresEconomicos();
+            DataSet tipoCambio = cliente.ObtenerIndicadoresEconomicos("317", DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"), "NombreEmpresa", "N");//retorna un DATASET
+                                                                                                                                                                             //317 numero indica valor de compra, fecha inicio, fecha final, nombre de quien solicita, indicador de subniveles
+            int monto=int.Parse( loginData.obtenerMonto(user));
+            float valorTipoCambio =float.Parse (tipoCambio.Tables[0].Rows[0].ItemArray[2].ToString());
+            int cambio = (int)valorTipoCambio;
+            string resultado = (monto * cambio).ToString();
+           
+            return resultado;
+        }
+
+        public string pagar(string carnet)
+        {
+            return loginData.pagar(carnet);
+        }
+    }//class
 
         public String generarUsuario()
         {

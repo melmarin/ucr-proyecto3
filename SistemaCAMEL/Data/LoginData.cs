@@ -40,46 +40,130 @@ namespace Data
             return rol;
         }//obtenerRol
 
+        public string cambiarPass(string user,string pass)
+        {
+            String monto = "";
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdObtenerRol = new SqlCommand();
+            cmdObtenerRol.CommandText = "sp_cambiar_pass";
+            cmdObtenerRol.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtenerRol.Connection = conexion;
+
+            //configurar los parametros
+            cmdObtenerRol.Parameters.Add(new SqlParameter("@user", user));
+            cmdObtenerRol.Parameters.Add(new SqlParameter("@pass", pass));
+
+
+            conexion.Open();
+            SqlDataReader drRol = cmdObtenerRol.ExecuteReader();
+            if (!drRol.Read())
+            {
+                return "Cambio de pass con éxito!";
+            }
+            
+            conexion.Close();
+            return "No se cambio el pass, intente de nuevo!";
+        }
+
+        public string obtenerMonto(string user)
+        {
+            String monto = "";
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdObtenerRol = new SqlCommand();
+            cmdObtenerRol.CommandText = "sp_obtener_monto_factura";
+            cmdObtenerRol.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtenerRol.Connection = conexion;
+
+            //configurar los parametros
+            cmdObtenerRol.Parameters.Add(new SqlParameter("@user", user));
+
+            conexion.Open();
+            SqlDataReader drRol = cmdObtenerRol.ExecuteReader();
+            while (drRol.Read())
+            {
+                monto = drRol["monto_total"].ToString();
+            }
+            conexion.Close();
+            return monto;
+        }
+
+        public string pagar(string carnet)
+        {
+            String monto = "";
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdObtenerRol = new SqlCommand();
+            cmdObtenerRol.CommandText = "sp_pagar_monto_factura";
+            cmdObtenerRol.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtenerRol.Connection = conexion;
+
+            //configurar los parametros
+            cmdObtenerRol.Parameters.Add(new SqlParameter("@carnet", carnet));
+
+            conexion.Open();
+            SqlDataReader drRol = cmdObtenerRol.ExecuteReader();
+            while (drRol.Read())
+            {
+                monto = drRol["estado"].ToString();
+            }
+            conexion.Close();
+            if (monto == "Cancelado")
+            {
+                return "Cancelado monto de matricula, pago con exito";
+            }
+            else {
+                return "No se pagó la matricula";
+            }
+            
+        }
+
         public string validarEncargado(string usuario, string clave)
         {
             String carnet = "";
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
             SqlCommand cmdValidar = new SqlCommand();
-            cmdValidar.CommandText = "sp_validar_engargado_login";
+            cmdValidar.CommandText = "sp_validar_encargado_login";
             cmdValidar.CommandType = System.Data.CommandType.StoredProcedure;
             cmdValidar.Connection = conexion;
 
             //configurar los parametros
-            cmdValidar.Parameters.Add(new SqlParameter("@usuario", usuario));
-            cmdValidar.Parameters.Add(new SqlParameter("@clave", clave));
+            cmdValidar.Parameters.Add(new SqlParameter("@user", usuario));
+            cmdValidar.Parameters.Add(new SqlParameter("@pass", clave));
 
             conexion.Open();
             SqlDataReader drRol = cmdValidar.ExecuteReader();
+            
 
             if (drRol.HasRows)
             {
+            conexion.Close();
+            SqlConnection conexion2 = new SqlConnection(this.cadenaConexion);
             SqlCommand cmdObtenerEstudiante = new SqlCommand();
             cmdObtenerEstudiante.CommandText = "sp_obtener_id_estudiante_matricula";
             cmdObtenerEstudiante.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdObtenerEstudiante.Connection = conexion;
+            cmdObtenerEstudiante.Connection = conexion2;
 
             //configurar los parametros
-            cmdObtenerEstudiante.Parameters.Add(new SqlParameter("@usuario", usuario));
+            cmdObtenerEstudiante.Parameters.Add(new SqlParameter("@user", usuario));
 
-            conexion.Open();
+            conexion2.Open();
             SqlDataReader drCarnet = cmdObtenerEstudiante.ExecuteReader();
+            
                 while (drCarnet.Read())
                 {
-                    carnet = drRol["id_estudiante"].ToString();
+                    carnet = drCarnet["id_estudiante"].ToString();
+                    conexion2.Close();
+                    if (carnet == "") {
+                        return "estaba sin nada";
+                    }
                     return carnet;
                 }
-
+            
             }
             else {
                 return "error";
             }
 
-            return carnet;
+            return "salio sin nada.. drCarnet.read Vacío";
         }
 
         public bool insertarLogin(string usuario, string clave, string rol)

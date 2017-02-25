@@ -77,13 +77,13 @@ namespace SistemaEscolar.AdmiView
             string cedula = tb_cedula.Text;
             Domain.Docente docente = new Domain.Docente(tb_cedula.Text, tb_nombre.Text, tb_apellidos.Text,
                 tb_telefono.Text, tb_correo.Text, tb_direccion.Text, tb_especialidad.Text);
-            //docenteBusiness.modificarDocente(docente, cedula);
+            docenteBusiness.modificarDocente(docente);
         }
 
         protected void btn_borrar_Click(object sender, EventArgs e)
         {
             string cedula = tb_cedula.Text;
-            //docenteBusiness.eliminarDocente(cedula);
+            docenteBusiness.eliminarDocente(cedula);
         }
     }
 }

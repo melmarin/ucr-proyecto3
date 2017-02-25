@@ -40,17 +40,83 @@ namespace Data
 
         public void eliminarDocente(string cedula)
         {
-            //TODO  hacer método
+            SqlConnection conexion = new SqlConnection(this.connectionString);
+            SqlCommand cmdObtener = new SqlCommand();
+            cmdObtener.CommandText = "sp_eliminar_docente";
+            cmdObtener.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtener.Connection = conexion;
+
+
+            //configurar los parametros
+            cmdObtener.Parameters.Add(new SqlParameter("@cedula", cedula));
+
+            conexion.Open();
+            SqlDataReader drDocente = cmdObtener.ExecuteReader();
+
+            conexion.Close();
         }
 
-        public void modificarDocente(Docente docente, string cedula)
+        public void modificarDocente(Docente docente)
         {
-            //TODO  hacer método
+            SqlConnection conexion = new SqlConnection(this.connectionString);
+            SqlCommand cmdObtener = new SqlCommand();
+            cmdObtener.CommandText = "sp_actualizar_docente";
+            cmdObtener.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtener.Connection = conexion;
+
+            string cedula = docente.Cedula;
+            string nombre = docente.Nombre;
+            string apellidos = docente.Apellidos;
+            string telefono = docente.Telefono;
+            string correo = docente.Correo;
+            string direccion = docente.Direccion;
+            string especialidad = docente.Especialidad;
+
+            //configurar los parametros
+            cmdObtener.Parameters.Add(new SqlParameter("@cedula", cedula));
+            cmdObtener.Parameters.Add(new SqlParameter("@nombre", nombre));
+            cmdObtener.Parameters.Add(new SqlParameter("@apellidos", apellidos));
+            cmdObtener.Parameters.Add(new SqlParameter("@telefono", telefono));
+            cmdObtener.Parameters.Add(new SqlParameter("@correo", correo));
+            cmdObtener.Parameters.Add(new SqlParameter("@direccion", direccion));
+            cmdObtener.Parameters.Add(new SqlParameter("@especialidad", especialidad));
+
+            conexion.Open();
+            SqlDataReader drDocente = cmdObtener.ExecuteReader();
+
+            conexion.Close();
         }
 
         public void ingresarDocente(Docente docente)
         {
-            //TODO  hacer método para ingresar docentes.
+            SqlConnection conexion = new SqlConnection(this.connectionString);
+            SqlCommand cmdObtener = new SqlCommand();
+            cmdObtener.CommandText = "sp_insertar_docente";
+            cmdObtener.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtener.Connection = conexion;
+
+            string cedula = docente.Cedula;
+            string nombre = docente.Nombre;
+            string apellidos = docente.Apellidos;
+            string telefono = docente.Telefono;
+            string correo = docente.Correo;
+            string direccion = docente.Direccion;
+            string especialidad = docente.Especialidad;
+
+            //configurar los parametros
+            cmdObtener.Parameters.Add(new SqlParameter("@cedula", cedula));
+            cmdObtener.Parameters.Add(new SqlParameter("@nombre", nombre));
+            cmdObtener.Parameters.Add(new SqlParameter("@apellidos", apellidos));
+            cmdObtener.Parameters.Add(new SqlParameter("@telefono", telefono));
+            cmdObtener.Parameters.Add(new SqlParameter("@correo", correo));
+            cmdObtener.Parameters.Add(new SqlParameter("@direccion", direccion));
+            cmdObtener.Parameters.Add(new SqlParameter("@especialidad", especialidad));
+
+            conexion.Open();
+            SqlDataReader drDocente = cmdObtener.ExecuteReader();
+            
+            conexion.Close();
+           
         }
 
         public Docente obtenerDocente(String cedula)

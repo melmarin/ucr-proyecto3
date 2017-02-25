@@ -11,11 +11,13 @@ using System.Text;
 public interface IService
 {
     [OperationContract]
-    LinkedList<string> consulta(string usuario);
+    string obtenerMonto(string user);
 
     [OperationContract]
-    string consulta2(string user);
+    string cambiarPass(string user,string pass);
 
+    [OperationContract]
+    string pagar(string carnet);
 
     [OperationContract]
     string login(string user, string pass);

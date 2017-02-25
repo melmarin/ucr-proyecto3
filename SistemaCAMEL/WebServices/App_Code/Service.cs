@@ -15,18 +15,12 @@ using Business;
 
 public class Service : IService
 {
-    public LinkedList<string> consulta(string usuario)
-      {
-        LinkedList<string> login = new LinkedList<string>();
-        login.AddLast(usuario+"User");
-        login.AddLast(usuario +"pass4");
-        return login ;
-    }
-
-    public string consulta2(string user)
+    public string cambiarPass(string user,string pass)
     {
-        
-        return "esto es un texto del servidor-******-usuario "+user ;
+        string conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
+        LoginBusiness login = new LoginBusiness(conectionString);
+        string resultado = login.cambiarPass(user,pass);
+        return resultado;
     }
 
     public string login(string user, string pass)
@@ -38,6 +32,21 @@ public class Service : IService
         LoginBusiness loginBusiness = new LoginBusiness(conectionString);
         string resultado = loginBusiness.validarEncargado(user, pass);
 
+        return resultado;
+    }
+
+    public string obtenerMonto(string user) {
+        string conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
+        LoginBusiness login = new LoginBusiness(conectionString);
+        string resultado=login.obtenerMonto(user);
+        return resultado;
+    }
+
+    public string pagar(string carnet)
+    {
+        string conectionString = WebConfigurationManager.ConnectionStrings["2017_sistema_camel"].ConnectionString;
+        LoginBusiness login = new LoginBusiness(conectionString);
+        string resultado = login.pagar(carnet);
         return resultado;
     }
 

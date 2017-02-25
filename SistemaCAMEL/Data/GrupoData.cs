@@ -57,11 +57,12 @@ namespace Data
         cmdInsertar.Connection = conexion;
 
         //configurar los parametros
-        cmdInsertar.Parameters.Add(new SqlParameter("@seccion", seccion));
         cmdInsertar.Parameters.Add(new SqlParameter("@id_curso", idCurso));
+        cmdInsertar.Parameters.Add(new SqlParameter("@seccion", seccion));
 
         conexion.Open();
         cmdInsertar.ExecuteNonQuery();
+        conexion.Close();
         }//insertarCursoGrupo
         
     }//class

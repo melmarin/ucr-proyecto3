@@ -27,4 +27,7 @@
 <br />
 <br />
 <asp:Button ID="btnGuardar" runat="server" OnClick="btnGuardar_Click" Text="Guardar" />
+    <br />
+    <asp:Label ID="lbMensaje" runat="server"></asp:Label>
+    <br />
 </asp:Content>

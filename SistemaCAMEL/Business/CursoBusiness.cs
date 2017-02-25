@@ -26,5 +26,10 @@ namespace Business
         {
             return cursoData.cursos();
         }//cursos
+
+        public Curso curso(string sigla)
+        {
+            return cursoData.curso(sigla);
+        }
         }//class
 }//namespace

@@ -37,15 +37,36 @@ namespace SistemaEscolar.AdmiView
         protected void agregar_onClick(object sender, EventArgs e)
         {
 
+            if (lbCursos.SelectedItem != null)
+            {
+                lbCursosSeleccionados.Items.Add(new ListItem(lbCursos.SelectedItem.Text, Convert.ToString(lbCursos.SelectedItem.Value)));
+                lbCursos.Items.Remove(lbCursos.SelectedItem);
+            }
         }
 
         protected void remover_onClick(object sender, EventArgs e)
         {
-
+            if (lbCursosSeleccionados.SelectedItem != null)
+            {
+                lbCursos.Items.Add(new ListItem(lbCursosSeleccionados.SelectedItem.Text, Convert.ToString(lbCursosSeleccionados.SelectedItem.Value)));
+                lbCursosSeleccionados.Items.Remove(lbCursosSeleccionados.SelectedItem);
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            LinkedList<Curso> cursosSeleccionados = new LinkedList<Curso>();
+            Curso curso = new Curso();
+
+            for (int i = 0; i < lbCursosSeleccionados.Items.Count; i++)
+            {
+                curso = cursoBusiness.curso(lbCursosSeleccionados.Items[i].Value);
+                cursosSeleccionados.AddLast(curso);
+            }//for
+
+            Grupo grupo = new Grupo();
+            grupo = new Grupo(tbSeccion.Text, tbGrado.Text, Int32.Parse(tbAno.Text), cursosSeleccionados);
+            lbMensaje.Text = grupoBusiness.insertar(grupo);
 
         }
     }

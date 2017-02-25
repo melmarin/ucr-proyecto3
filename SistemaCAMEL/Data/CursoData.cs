@@ -69,5 +69,32 @@ namespace Data
             return cursos;
         }
 
+        public Curso curso(string sigla)
+        {
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdObtener = new SqlCommand();
+            cmdObtener.CommandText = "sp_obtener_curso";
+            cmdObtener.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtener.Connection = conexion;
+            //configurar los parametros
+            cmdObtener.Parameters.Add(new SqlParameter("@sigla", sigla));
+
+            conexion.Open();
+            SqlDataReader drCursos = cmdObtener.ExecuteReader();
+            Curso curso = new Curso();
+            Docente docente = new Docente();
+            DocenteData docenteData = new DocenteData(cadenaConexion);
+
+            while (drCursos.Read())
+            {
+                docente = docenteData.obtenerDocente(drCursos["id_docente"].ToString());
+                curso = new Curso(drCursos["sigla"].ToString(),
+                    drCursos["nombre"].ToString(), docente);
+
+            }//while
+            conexion.Close();
+            return curso;
+        }
+
     }//class
 }//namespace

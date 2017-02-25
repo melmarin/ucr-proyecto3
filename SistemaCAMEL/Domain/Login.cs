@@ -20,6 +20,11 @@ namespace Domain
             this.rol = rol;
         }
 
+        public Login(string usuario)
+        {
+            this.usuario = usuario;
+        }
+
         public Login()
         {
             this.usuario = "";

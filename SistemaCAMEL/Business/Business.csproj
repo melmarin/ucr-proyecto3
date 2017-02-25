@@ -44,8 +44,10 @@
     <Compile Include="DocenteBusiness.cs" />
     <Compile Include="EncargadoEstudianteBusiness.cs" />
     <Compile Include="EstudianteBusiness.cs" />
+    <Compile Include="FacturaBusiness.cs" />
     <Compile Include="GrupoBusiness.cs" />
     <Compile Include="LoginBusiness.cs" />
+    <Compile Include="MatriculaBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,18 +10,13 @@ namespace Domain
     {
         private int codigo;
         private DateTime fecha;
-        private DateTime fecha_vencimiento;
         private float monto_total;
-        private int recargo;
         private String estado;
 
-        public Factura(int codigo, DateTime fecha, DateTime fecha_vencimiento, float monto_total, int recargo, string estado)
+        public Factura(float monto_total, string estado)
         {
-            this.codigo = codigo; 
-            this.fecha = fecha;
-            this.fecha_vencimiento = fecha_vencimiento;
+            this.fecha = DateTime.Now;
             this.monto_total = monto_total;
-            this.recargo = recargo;
             this.estado = estado;
         }
 
@@ -29,9 +24,7 @@ namespace Domain
         {
             this.codigo = 0;
             this.fecha = DateTime.Now;
-            this.fecha_vencimiento = DateTime.Now;
             this.monto_total = 0;
-            this.recargo = 0;
             this.estado = "";
         }
 
@@ -61,19 +54,6 @@ namespace Domain
             }
         }
 
-        public DateTime Fecha_vencimiento
-        {
-            get
-            {
-                return fecha_vencimiento;
-            }
-
-            set
-            {
-                fecha_vencimiento = value;
-            }
-        }
-
         public float Monto_total
         {
             get
@@ -84,19 +64,6 @@ namespace Domain
             set
             {
                 monto_total = value;
-            }
-        }
-
-        public int Recargo
-        {
-            get
-            {
-                return recargo;
-            }
-
-            set
-            {
-                recargo = value;
             }
         }
 

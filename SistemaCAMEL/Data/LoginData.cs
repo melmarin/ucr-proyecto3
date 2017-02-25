@@ -86,7 +86,7 @@ namespace Data
         {
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
             SqlCommand cmdLogin = new SqlCommand();
-            cmdLogin.CommandText = " sp_insertar_login";
+            cmdLogin.CommandText = "sp_insertar_login";
             cmdLogin.CommandType = System.Data.CommandType.StoredProcedure;
             cmdLogin.Connection = conexion;
 
@@ -127,5 +127,43 @@ namespace Data
             conexion.Close();
             return login;
         }//obtenerRol
+
+        public String generarUsuario()
+        {
+            String iniciales = "DOC";
+            int num = 100;
+
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdEstudiante = new SqlCommand("SELECT TOP 1 usuario from login_sistema where rol = 'ENCA' order by usuario desc", conexion);
+            conexion.Open();
+            SqlDataReader drUsuario = cmdEstudiante.ExecuteReader();
+
+            if (drUsuario.Read())
+            {
+                num = Int32.Parse(drUsuario["usuario"].ToString().Substring(3,3));
+                num++;
+            }//if
+            return iniciales + num;
+        }//generarUsuario
+
+        public String generarClave()
+        {
+            String iniciales = "Doc";
+            Random random = new Random();
+            int randomNumber = random.Next(366, 428);
+            int num = 100;
+
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdEstudiante = new SqlCommand("SELECT TOP 1 usuario from login_sistema where rol = 'ENCA' order by usuario desc", conexion);
+            conexion.Open();
+            SqlDataReader drUsuario = cmdEstudiante.ExecuteReader();
+
+            if (drUsuario.Read())
+            {
+                num = Int32.Parse(drUsuario["usuario"].ToString().Substring(3,3));
+                num++;
+            }//if
+            return iniciales + num + randomNumber;
+        }//generarUsuario
     }//class
 }//namespace

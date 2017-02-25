@@ -27,6 +27,13 @@ namespace Domain
             this.cursos = cursos;
         }//ctor
 
+        public Grupo(string seccion, string grado, int ano)
+        {
+            this.seccion = seccion;
+            this.grado = grado;
+            this.ano = ano;
+        }
+
         public string Seccion
         {
             get

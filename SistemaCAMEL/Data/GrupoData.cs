@@ -64,6 +64,58 @@ namespace Data
         cmdInsertar.ExecuteNonQuery();
         conexion.Close();
         }//insertarCursoGrupo
-        
+
+        public LinkedList<Grupo> obtenerGrupos()
+        {
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdObtenerGrupos = new SqlCommand();
+            cmdObtenerGrupos.CommandText = "sp_obtener_grupos";
+            cmdObtenerGrupos.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtenerGrupos.Connection = conexion;
+
+            conexion.Open();
+            SqlDataReader drGrupos = cmdObtenerGrupos.ExecuteReader();
+            LinkedList<Grupo> grupos = new LinkedList<Grupo>();
+            Grupo grupo = new Grupo();
+
+            while (drGrupos.Read())
+            {
+
+                grupo = new Grupo(drGrupos["seccion"].ToString(), drGrupos["grado"].ToString(),
+                    Int32.Parse(drGrupos["ano"].ToString()));
+
+                grupos.AddLast(grupo);
+            }//while
+            conexion.Close();
+            return grupos;
+        }//obtenerGrupos
+
+        public Grupo obtenerGrupo(string seccion)
+        {
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+            SqlCommand cmdObtenerGrupos = new SqlCommand();
+            cmdObtenerGrupos.CommandText = "sp_obtener_grupo";
+            cmdObtenerGrupos.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdObtenerGrupos.Connection = conexion;
+
+            //configurar los parametros
+            cmdObtenerGrupos.Parameters.Add(new SqlParameter("@seccion", seccion));
+
+            conexion.Open();
+            SqlDataReader drGrupos = cmdObtenerGrupos.ExecuteReader();
+            Grupo grupo = new Grupo();
+
+            while (drGrupos.Read())
+            {
+
+                grupo = new Grupo(drGrupos["seccion"].ToString(), drGrupos["grado"].ToString(),
+                    Int32.Parse(drGrupos["ano"].ToString()));
+
+            }//while
+            conexion.Close();
+            return grupo;
+        }//obtenerGrupo
+
     }//class
+
 }//namspace

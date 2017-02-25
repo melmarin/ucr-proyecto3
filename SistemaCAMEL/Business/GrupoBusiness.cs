@@ -21,5 +21,15 @@ namespace Business
         {
             return grupoData.insertar(grupo);
         }//insertar
+
+        public LinkedList<Grupo> obtenerGrupos()
+        {
+            return grupoData.obtenerGrupos();
+        }
+
+        public Grupo obtenerGrupo(string seccion)
+        {
+            return grupoData.obtenerGrupo(seccion);
+        }
         }//class
 }//namespace

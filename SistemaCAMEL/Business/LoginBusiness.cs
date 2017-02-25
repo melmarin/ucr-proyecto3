@@ -25,5 +25,20 @@ namespace Business
         {
             return loginData.validarEncargado(usuario, clave);
         }
-    }//class
+
+        public String generarUsuario()
+        {
+            return loginData.generarUsuario();
+        }
+
+        public String generarClave()
+        {
+            return loginData.generarClave();
+        }
+
+        public bool insertarLogin(string usuario, string clave, string rol)
+        {
+            return loginData.insertarLogin(usuario, clave, rol);
+        }
+        }//class
 }//namespace

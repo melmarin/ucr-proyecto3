@@ -48,6 +48,7 @@
     <Compile Include="Factura.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Matricula.cs" />
     <Compile Include="Nota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -25,17 +25,17 @@ namespace Business
         {
             docenteData.ingresarDocente(docente);
         }
-        /*
-        public void modificarDocente(Docente docente, string cedula)
+        
+        public void modificarDocente(Docente docente)
         {
-            docenteData.modificarDocente(docente,cedula);
+            docenteData.modificarDocente(docente);
         }
 
         public void eliminarDocente(string cedula)
         {
             docenteData.eliminarDocente(cedula);
         }
-        */
+       
 
         public Docente obtenerDocente(String cedula)
         {

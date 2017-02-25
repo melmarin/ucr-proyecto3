@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,28 +9,23 @@ namespace Domain
 {
     public class Grupo
     {
-        private String seccion;
-        private String grado;
+        private string seccion;
+        private string grado;
         private int ano;
-        private LinkedList<Estudiante> listaEstudiantes;
-        private LinkedList<Curso> listaCursos;
+        private LinkedList<Curso> cursos;
 
-        public Grupo(string seccion, string grado, int ano, LinkedList<Estudiante> listaEstudiantes, LinkedList<Curso> listaCursos)
+        public Grupo()
+        {
+
+        }//ctor
+
+        public Grupo(string seccion, string grado, int ano, LinkedList<Curso> cursos)
         {
             this.seccion = seccion;
             this.grado = grado;
             this.ano = ano;
-            this.listaEstudiantes = listaEstudiantes;
-            this.listaCursos = listaCursos;
-        }
-        public Grupo()
-        {
-            this.seccion = "";
-            this.grado = "";
-            this.ano = 0;
-            this.listaEstudiantes = new LinkedList<Estudiante>();
-            this.listaCursos = new LinkedList<Curso>();
-        }
+            this.cursos = cursos;
+        }//ctor
 
         public string Seccion
         {
@@ -70,30 +66,17 @@ namespace Domain
             }
         }
 
-        public LinkedList<Estudiante> ListaEstudiantes
+        public LinkedList<Curso> Cursos
         {
             get
             {
-                return listaEstudiantes;
+                return cursos;
             }
 
             set
             {
-                listaEstudiantes = value;
+                cursos = value;
             }
         }
-
-        public LinkedList<Curso> ListaCursos
-        {
-            get
-            {
-                return listaCursos;
-            }
-
-            set
-            {
-                listaCursos = value;
-            }
-        }
-    }
-}
+    }//class
+}//namespace

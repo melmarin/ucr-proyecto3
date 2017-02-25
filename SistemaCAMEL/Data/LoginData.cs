@@ -129,38 +129,3 @@ namespace Data
         }//obtenerRol
     }//class
 }//namespace
-
-
-
-
-
-
-
-
-/*_____________________________________________________________________________
- 
-     
-     PROCEDIMIENTOS-->
-
-                CREATE PROCEDURE sp_validar_engargado_login 
-                (@user varchar(9),
-                @pass varchar(30)
-                ) 
-                AS
-                    SELECT * from login_sitema where usuario=@user and clave=@pass;
-                go
-
-
-
-                CREATE PROCEDURE sp_obtener_id_estudiante_matricula
-                (@user varchar(9)
-                ) 
-                AS
-                    SELECT * from matricula where usuario_login=@user;
-                go
-     
-     
-     
-     
-     
-     */

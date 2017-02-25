@@ -42,7 +42,7 @@ namespace Data
             return mensaje;
         }//insertar
 
-        /*public LinkedList<Curso> cursos()
+        public LinkedList<Curso> cursos()
         {
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
             SqlCommand cmdObtener = new SqlCommand();
@@ -55,10 +55,11 @@ namespace Data
             LinkedList<Curso> cursos = new LinkedList<Curso>();
             Curso curso = new Curso();
             Docente docente = new Docente();
+            DocenteData docenteData = new DocenteData(cadenaConexion);
 
             while (drCursos.Read())
             {
-                docente = obtenerDocente(drCursos["id_docente"].ToString());
+                docente = docenteData.obtenerDocente(drCursos["id_docente"].ToString());
                 curso = new Curso(drCursos["sigla"].ToString(),
                     drCursos["nombre"].ToString(), docente);
 
@@ -66,7 +67,7 @@ namespace Data
             }//while
             conexion.Close();
             return cursos;
-        }*/
+        }
 
     }//class
 }//namespace

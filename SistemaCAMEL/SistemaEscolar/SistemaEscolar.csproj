@@ -101,6 +101,7 @@
     <Content Include="AdmiView\IngresarCursoForm.aspx" />
     <Content Include="AdmiView\IngresarEncargadoForm.aspx" />
     <Content Include="AdmiView\IngresarEstudianteForm.aspx" />
+    <Content Include="AdmiView\IngresarGrupoForm.aspx" />
     <Content Include="AdmiView\InicioAdmiForm.aspx" />
     <Content Include="AdmiView\InsertarDocenteForm.aspx" />
     <Content Include="DocenteView\InicioDocenteForm.aspx" />
@@ -187,6 +188,13 @@
     </Compile>
     <Compile Include="AdmiView\IngresarEstudianteForm.aspx.designer.cs">
       <DependentUpon>IngresarEstudianteForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdmiView\IngresarGrupoForm.aspx.cs">
+      <DependentUpon>IngresarGrupoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmiView\IngresarGrupoForm.aspx.designer.cs">
+      <DependentUpon>IngresarGrupoForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdmiView\InicioAdmiForm.aspx.cs">
       <DependentUpon>InicioAdmiForm.aspx</DependentUpon>

@@ -69,7 +69,7 @@ namespace SistemaEscolar.AdmiView
             Domain.Docente docente = new Domain.Docente(tb_cedula.Text, tb_nombre.Text, tb_apellidos.Text, 
                 tb_telefono.Text, tb_correo.Text, tb_direccion.Text, tb_especialidad.Text);
 
-            //docenteBusiness.ingresarDocente(docente);
+            docenteBusiness.ingresarDocente(docente);
         }
 
         protected void btn_editar_Click(object sender, EventArgs e)

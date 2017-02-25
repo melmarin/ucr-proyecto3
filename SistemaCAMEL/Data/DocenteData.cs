@@ -11,7 +11,6 @@ namespace Data
 {
     public class DocenteData{
         private String connectionString;
-        private object sqlConnection;
 
         public DocenteData(string connectionString)
         {

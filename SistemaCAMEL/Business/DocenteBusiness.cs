@@ -20,12 +20,12 @@ namespace Business
             return docenteData.obtenerDocentes();
         }
 
-        /*
+        
         public void ingresarDocente(Docente docente)
         {
             docenteData.ingresarDocente(docente);
         }
-
+        /*
         public void modificarDocente(Docente docente, string cedula)
         {
             docenteData.modificarDocente(docente,cedula);

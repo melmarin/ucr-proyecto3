@@ -156,7 +156,7 @@ namespace Data
                 (@user varchar(9)
                 ) 
                 AS
-                    SELECT * from matricula where usuario=@user;
+                    SELECT * from matricula where usuario_login=@user;
                 go
      
      
